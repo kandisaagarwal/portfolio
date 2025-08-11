@@ -9,7 +9,6 @@ import FloatingButton from './FloatingButton'
 const PAGES = 3 // change to how many full-screen sections you want
 
 export default function Home() {
-
     const handleNavigate = (section) => {
     const sectionIndex = { about: 0, projects: 1, resume: 2 }[section]
     if (sectionIndex !== undefined) {
@@ -32,15 +31,28 @@ export default function Home() {
           <ScrollControls pages={PAGES} damping={0.12}>
             {/* 3D content (robot) — still inside <Scroll> so useScroll works */}
             <Scroll>
-              <RobotModel/>
-              <FloatingButton/>
+              <RobotModel />
+
+              <FloatingButton
+                position={[4, -1, 0]}
+                label="Projects"
+                onClick={() => {
+                  // Use React Router's useNavigate for routing
+                  window.location.href = '/project';
+                }}
+              />
+
+              <FloatingButton
+                position={[-4, 1, 0]}
+                label="About"
+                onClick={() => handleNavigate('about')}
+              />
             </Scroll>
 
-            {/* DOM content driven by scroll */}
+            {/* DOM content driven by scroll */}}
             <Scroll html>
               <SectionsOverlay pages={PAGES} />
             </Scroll>
-
           </ScrollControls>
         </Suspense>
       </Canvas>
