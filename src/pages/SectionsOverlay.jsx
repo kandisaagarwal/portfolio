@@ -22,19 +22,6 @@ export default function SectionsOverlay() {
     })
   })
 
-  const sections = [
-    {
-    },
-    {
-      title: 'Projects',
-      content: <p>Here are some of my amazing projects!</p>,
-    },
-    {
-      title: 'Contact',
-      content: <p>Get in touch with me at myemail@example.com</p>,
-    },
-  ]
-
   return (
     <Scroll html>
       {sections.map((sec, i) => (
