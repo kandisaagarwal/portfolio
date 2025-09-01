@@ -5,6 +5,7 @@ import { useScroll } from "framer-motion";
 import RobotModel from "../models/RobotModel";
 import Loader from "../components/Loader";
 import ScrollSwipeCards from "./ScrollSwipeCards";
+import FloatingButton from "./FloatingButton"; // ✅ Import your floating button
 import { projects } from "./projects_data"; // ✅ your projects array
 
 export default function Home() {
@@ -29,6 +30,30 @@ export default function Home() {
 
             {/* Robot */}
             <RobotModel />
+
+            {/* Floating Buttons around Robot
+            <FloatingButton
+              position={[1.5, 1, 0]}
+              label="Info"
+              onClick={() => alert("Info button clicked!")}
+            />
+            <FloatingButton
+              position={[-1.5, 1, 0]}
+              label="Projects"
+              onClick={() => document.getElementById("projects-section").scrollIntoView({ behavior: "smooth" })}
+            />
+            <FloatingButton
+              position={[0, 2, -1]}
+              label="Contact"
+              onClick={() => alert("Contact button clicked!")}
+            /> */}
+
+            <FloatingButton 
+              position={[3, 1, 0]} 
+              label="Projects" 
+              targetId="projects-section" 
+              />
+
           </Suspense>
 
           <OrbitControls enableZoom={false} />
@@ -37,6 +62,7 @@ export default function Home() {
 
       {/* Projects Section */}
       <div
+        id="projects-section"
         ref={containerRef}
         className="relative w-full bg-gray-900"
         style={{ height: `${projects.length * 100}vh` }} // each card takes a full screen
