@@ -1,3 +1,4 @@
+// src/data/projects.js
 export const projects = [
   {
     title: "Matthias Leidinger",
