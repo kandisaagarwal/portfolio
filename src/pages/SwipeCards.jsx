@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
-export default function ScrollSwipeCards({ i, title, description, img, url, color, progress, range, targetScale }) {
+export default function SwipeCards({ i, title, description, img, url, color, progress, range, targetScale }) {
   const containerRef = useRef(null);
 
   // Local scroll for image parallax (scale image as card enters)
@@ -26,6 +26,7 @@ export default function ScrollSwipeCards({ i, title, description, img, url, colo
         left: 0,
         right: 0,
         margin: "0 auto",
+        opacity: "0.8",
       }}
     >
       <div
@@ -37,9 +38,11 @@ export default function ScrollSwipeCards({ i, title, description, img, url, colo
             <h2 className="text-3xl md:text-5xl font-semibold mb-4 leading-tight drop-shadow-[0_1px_0_rgba(255,255,255,0.35)]">
               {title}
             </h2>
+
             <p className="text-base md:text-lg opacity-90 mb-6">
               {description}
             </p>
+
             {url && (
               <a
                 href={url}
@@ -52,6 +55,7 @@ export default function ScrollSwipeCards({ i, title, description, img, url, colo
                 </svg>
               </a>
             )}
+
           </div>
 
           <div className="relative aspect-[4/3] md:aspect-auto min-h-[40vh]">
@@ -59,6 +63,7 @@ export default function ScrollSwipeCards({ i, title, description, img, url, colo
               <img src={img} alt={title} className="h-full w-full object-cover" />
             </motion.div>
           </div>
+
         </div>
       </div>
     </motion.div>
