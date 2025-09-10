@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import Background from "./Background";
 
 export default function SwipeCards({ i, title, description, img, url, color, progress, range, targetScale }) {
   const containerRef = useRef(null);
@@ -26,13 +27,13 @@ export default function SwipeCards({ i, title, description, img, url, color, pro
         left: 0,
         right: 0,
         margin: "0 auto",
-        opacity: "0.8",
       }}
     >
       <div
         className="w-[90vw] max-w-6xl h-[70vh] rounded-2xl overflow-hidden shadow-2xl border border-black/10 flex flex-col justify-center"
         style={{ backgroundColor: color }}
       >
+        <Background/>
         <div className="grid grid-cols-1 md:grid-cols-2 h-full">
           <div className="p-8 md:p-12 flex flex-col justify-center bg-black/20 text-black">
             <h2 className="text-3xl md:text-5xl font-semibold mb-4 leading-tight drop-shadow-[0_1px_0_rgba(255,255,255,0.35)]">

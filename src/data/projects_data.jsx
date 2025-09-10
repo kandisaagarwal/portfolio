@@ -1,12 +1,12 @@
 // src/data/projects.js
 export const projects = [
   {
-    title: "Matthias Leidinger",
+    title: "Inventory Management System",
     description:
-      "Originally hailing from Austria, Berlin-based photographer Matthias Leindinger is a young creative brimming with talent and ideas.",
+      "A versatile solution for e-ecommerce suppliers to manage their inventory, handle multiple suppliers, invoicing and ",
     img: "https://images.unsplash.com/photo-1519682337058-a94d519337bc?q=80&w=2069&auto=format&fit=crop",
     color: "#BBACAF",
-    url: "https://www.ignant.com/2023/03/25/ad2186-matthias-leidingers-photographic-exploration-of-awe-and-wonder/",
+    url: "",
   },
   {
     title: "Clément Chapillon",

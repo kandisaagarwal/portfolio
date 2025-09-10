@@ -7,10 +7,10 @@ import { useRef } from "react";
 export default function Background() {
   const ref = useRef();
   // Generate random sphere points
-  const sphere = random.inSphere(new Float32Array(5000), { radius: 1.5 });
+  const sphere = random.inSphere(new Float32Array(2000), { radius: 1.5 });
 
   return (
-    <div className="fixed inset-0 -z-10">
+    <div className="fixed inset-0 z-0">
       <Canvas camera={{ position: [0, 0, 1] }}>
         <Points
           ref={ref}
@@ -21,12 +21,12 @@ export default function Background() {
           <PointMaterial
             transparent
             color="#ffffff"
-            size={0.01}
+            size={0.002}
             sizeAttenuation={true}
             depthWrite={false}
           />
         </Points>
-        <OrbitControls enableZoom={false} enablePan={false} autoRotate autoRotateSpeed={0.5} />
+        <OrbitControls enableZoom={false} enablePan={false} autoRotate autoRotateSpeed={0.1} />
       </Canvas>
     </div>
   );

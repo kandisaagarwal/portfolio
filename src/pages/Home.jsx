@@ -20,10 +20,12 @@ export default function Home() {
   });
 
   return (
+    
     <div className="w-screen min-h-screen bg-black flex flex-col">
-        {/* <Background /> */}
+      <Background />
+
       {/* 3D Robot Section */}
-      <div className="w-full h-screen">
+      <div className="w-full h-screen z-4">
         <Canvas camera={{ position: [0, 1.5, 6], fov: 50 }}>
           <Suspense fallback={<Loader />}>
             {/* Lights */}
@@ -45,6 +47,7 @@ export default function Home() {
           <OrbitControls enableZoom={false} />
         </Canvas>
       </div>
+    
 
       {/* Projects Section */}
       <div
@@ -53,6 +56,13 @@ export default function Home() {
         className="relative w-full bg-black"
         style={{ height: `${projects.length * 100}vh` }}
       >
+      <Background />
+
+      <br/>
+      <br/>
+
+      <h1 className="text-white text-center text-5xl font-bold"> Projects </h1>
+
         {projects.map((proj, i) => {
           const start = i / projects.length;
           const end = (i + 1) / projects.length;
@@ -73,6 +83,9 @@ export default function Home() {
           );
         })}
       </div>
+
+      <h1>Hellow this is testing</h1>
+
     </div>
   );
 }
