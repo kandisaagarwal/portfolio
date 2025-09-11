@@ -7,7 +7,7 @@ import { useRef } from "react";
 export default function Background() {
   const ref = useRef();
   // Generate random sphere points
-  const sphere = random.inSphere(new Float32Array(2000), { radius: 1.5 });
+  const sphere = random.inSphere(new Float32Array(4000), { radius: 4 });
 
   return (
     <div className="fixed inset-0 z-0">
@@ -21,12 +21,12 @@ export default function Background() {
           <PointMaterial
             transparent
             color="#ffffff"
-            size={0.002}
+            size={0.008}
             sizeAttenuation={true}
             depthWrite={false}
           />
         </Points>
-        <OrbitControls enableZoom={false} enablePan={false} autoRotate autoRotateSpeed={0.1} />
+        <OrbitControls enableZoom={false} enablePan={false} autoRotate autoRotateSpeed={0.75} />
       </Canvas>
     </div>
   );

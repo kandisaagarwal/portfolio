@@ -75,7 +75,6 @@ export default function Home() {
               description={proj.description}
               img={proj.img}
               url={proj.url}
-              color={proj.color}
               progress={scrollYProgress}
               range={[start, end]}
               targetScale={0.9}
