@@ -40,7 +40,7 @@ export default function SwipeCards({ i, title, description, img, url, progress, 
     playsInline
     className="absolute inset-0 w-full h-full object-cover"
   >
-    <source src="../public/card_another.mp4" type="video/mp4" />
+    <source src="/card_bg.mp4" type="video/mp4" />
   </video>
 
   {/* Optional overlay for better text contrast */}
