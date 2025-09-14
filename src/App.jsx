@@ -8,7 +8,7 @@ const App = () => {
       {/* <Home/> */}
         <main>
             <Router>
-                <Navbar />
+                {/* <Navbar /> */}
                 <Home/>
                 {/* <Routes>
                     <Route path="/" element={<Home />} />

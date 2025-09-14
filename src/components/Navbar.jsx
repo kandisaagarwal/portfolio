@@ -6,11 +6,11 @@ const Navbar = () => {
     <header className="header">
       <NavLink
         to="/"
-        className="w-10 h-10 rounded-lg bg-white items-center justify-center flex font-bold shadow-md"
+        className="h-10 rounded-lg items-center justify-center flex font-bold shadow-md text-xl"
       >
-        <p className="blue-gradient_text">KA</p>
+        <p className="blue-gradient_text">KANDISA AGARWAL</p>
       </NavLink>
-
+{/* 
       <nav className="flex text-lg gap-7 font-medium">
         <HashLink smooth to="/#about" className="text-white hover:text-red-500">
           ABOUT
@@ -21,7 +21,7 @@ const Navbar = () => {
         <HashLink smooth to="/#resume" className="text-white hover:text-red-500">
           RESUME
         </HashLink>
-      </nav>
+      </nav> */}
       
     </header>
   );

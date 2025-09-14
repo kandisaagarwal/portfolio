@@ -81,7 +81,7 @@ export default function RobotModel(props) {
       ref={group}
       object={scene}
       scale={[2, 2, 2]}
-      position={[0, -1.5, 0]} // adjust Y if robot is floating/sinking
+      position={[0, -2.2, -1]} // adjust Y if robot is floating/sinking
       {...props}
     />
   )
