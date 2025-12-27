@@ -95,13 +95,13 @@ export default function Home() {
       <br/>
       <br/>
       
-      <h1 className="text-white text-center text-5xl font-bold"> Skills </h1>
-
 
       <div
       id="skills-section">
       <br/>
       <br/>
+        <h1 className="text-white text-center text-5xl font-bold"> Skills </h1>
+
 
         <SkillsCarousel/>
 
@@ -112,8 +112,6 @@ export default function Home() {
       <br/>
       <br/>
       
-      <h1 className="text-white text-center text-5xl font-bold"> Projects </h1>
-
       <br/>
 
       {/* Projects Section */}
@@ -124,6 +122,9 @@ export default function Home() {
         style={{ height: `${projects.length * 100}vh` }}
       >
       <Background />
+
+            <h1 className="text-white text-center text-5xl font-bold"> Projects </h1>
+
 
 
 
