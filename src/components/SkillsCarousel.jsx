@@ -1,21 +1,35 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-import skills from "../data/skils_data"
 
 export default function SkillsCarousel({ skillsProp, autoplayInterval = 3000 }) {
-  // const defaultSkills = [
-  //   { id: "react", name: "React", img: "/skills/react.png" },
-  //   { id: "js", name: "JavaScript", img: "/skills/javascript.png" },
-  //   { id: "ts", name: "TypeScript", img: "/skills/typescript.png" },
-  //   { id: "py", name: "Python", img: "/skills/python.png" },
-  //   { id: "node", name: "Node.js", img: "/skills/node.png" },
-  //   { id: "node", name: "Node.js", img: "/skills/node.png" },
-  //   { id: "node", name: "Node.js", img: "/skills/node.png" },
-  // ];
+const defaultSkills = [
+  { id: "cpp", name: "C++", img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" },
+  { id: "python", name: "Python", img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" },
+  { id: "pytorch", name: "PyTorch", img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pytorch/pytorch-original.svg" },
+  { id: "tensorflow", name: "TensorFlow", img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tensorflow/tensorflow-original.svg" },
+  { id: "sklearn", name: "Scikit-Learn", img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/scikitlearn/scikitlearn-original.svg" },
+  { id: "pandas", name: "Pandas", img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pandas/pandas-original.svg" },
+  { id: "numpy", name: "Numpy", img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/numpy/numpy-original.svg" },
+  { id: "matplotlib", name: "Matplotlib", img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/matplotlib/matplotlib-original.svg" },
+  { id: "tailwind", name: "Tailwind CSS", img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" },
+  { id: "css", name: "CSS", img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" },
+  { id: "react", name: "React.js", img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" },
+  { 
+    id: "cnn", 
+    name: "CNN", 
+    // Custom SVG for Neural Network since no standard logo exists
+    img: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHN0eWxlPi5ue2ZpbGw6IzYxZGFmYjt9Lmx7c3Ryb2tlOiM2MWRhZmI7c3Ryb2tlLXdpZHRoOjI7fTwvc3R5bGU+PGc+PGxpbmUgY2xhc3M9ImwiIHgxPSIxMCIgeTE9IjE1IiB4Mj0iMzIiIHkyPSI4Ii8+PGxpbmUgY2xhc3M9ImwiIHgxPSIxMCIgeTE9IjE1IiB4Mj0iMzIiIHkyPSIyNCIvPjxsaW5lIGNsYXNzPSJsIiB4MT0iMTAiIHkxPSIzMiIgeDI9IjMyIiB5Mj0iOCIvPjxsaW5lIGNsYXNzPSJsIiB4MT0iMTAiIHkxPSIzMiIgeDI9IjMyIiB5Mj0iMjQiLz48bGluZSBjbGFzcz0ibCIgeDE9IjEwIiB5MT0iMzIiIHgyPSIzMiIgeTI9IjQwIi8+PGxpbmUgY2xhc3M9ImwiIHgxPSIxMCIgeTE9IjQ5IiB4Mj0iMzIiIHkyPSIyNCIvPjxsaW5lIGNsYXNzPSJsIiB4MT0iMTAiIHkxPSI0OSIgeDI9IjMyIiB5Mj0iNDAiLz48bGluZSBjbGFzcz0ibCIgeDE9IjEwIiB5MT0iNDkiIHgyPSIzMiIgeTI9IjU2Ii8+PGxpbmUgY2xhc3M9ImwiIHgxPSIzMiIgeTE9IjgiIHgyPSI1NCIgeTI9IjIwIi8+PGxpbmUgY2xhc3M9ImwiIHgxPSIzMiIgeTE9IjI0IiB4Mj0iNTQiIHkyPSIyMCIvPjxsaW5lIGNsYXNzPSJsIiB4MT0iMzIiIHkxPSIyNCIgeDI9IjU0IiB5Mj0iNDQiLz48bGluZSBjbGFzcz0ibCIgeDE9IjMyIiB5MT0iNDAiIHgyPSI1NCIgeTI9IjIwIi8+PGxpbmUgY2xhc3M9ImwiIHgxPSIzMiIgeTE9IjQwIiB4Mj0iNTQiIHkyPSI0NCIvPjxsaW5lIGNsYXNzPSJsIiB4MT0iMzIiIHkxPSI1NiIgeDI9IjU0IiB5Mj0iNDQiLz48Y2lyY2xlIGNsYXNzPSJuIiBjeD0iMTAiIGN5PSIxNSIgcj0iNSIvPjxjaXJjbGUgY2xhc3M9Im4iIGN4PSIxMCIgY3k9IjMyIiByPSI1Ii8+PGNpcmNsZSBjbGFzcz0ibiIgY3g9IjEwIiBjeT0iNDkiIHI9IjUiLz48Y2lyY2xlIGNsYXNzPSJuIiBjeD0iMzIiIGN5PSI4IiByPSI1Ii8+PGNpcmNsZSBjbGFzcz0ibiIgY3g9IjMyIiBjeT0iMjQiIHI9IjUiLz48Y2lyY2xlIGNsYXNzPSJuIiBjeD0iMzIiIGN5PSI0MCIgcj0iNSIvPjxjaXJjbGUgY2xhc3M9Im4iIGN4PSIzMiIgY3k9IjU2IiByPSI1Ii8+PGNpcmNsZSBjbGFzcz0ibiIgY3g9IjU0IiBjeT0iMjAiIHI9IjUiLz48Y2lyY2xlIGNsYXNzPSJuIiBjeD0iNTQiIGN5PSI0NCIgcj0iNSIvPjwvZz48L3N2Zz4="
+  },
+  { id: "mysql", name: "MySQL", img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" },
+  { id: "mongodb", name: "MongoDB", img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" },
+  { id: "node", name: "Node.js", img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" },
+  { id: "html", name: "HTML", img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" },
+  { id: "git", name: "Git", img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" },
+];
 
-  const myskills = Array.isArray(skillsProp) && skillsProp.length ? skillsProp : skills;
-  const total = myskills.length;
+  const skills = Array.isArray(skillsProp) && skillsProp.length ? skillsProp : skills;
+  const total = skills.length;
 
   const [visible, setVisible] = useState(3);
   useEffect(() => {
@@ -71,7 +85,7 @@ export default function SkillsCarousel({ skillsProp, autoplayInterval = 3000 }) 
             className="flex transition-transform duration-500 ease-in-out"
             style={{ width: `${wrapperWidthPct}%`, transform: `translateX(-${translatePct}%)` }}
           >
-            {myskills.map((s) => (
+            {skills.map((s) => (
               <div
                 key={s.id}
                 className="flex-shrink-0 p-2 flex flex-col items-center justify-center"
