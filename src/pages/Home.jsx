@@ -77,7 +77,7 @@ export default function Home() {
               <FloatingButton 
               position={[-4, -1.5, 1]} 
               label="Resume" 
-              targetId="skills-section" 
+              targetId="resume-section" 
               colour={"purple"}
               size={1} 
               widthScale={[0.4,0.4,0.4]}
@@ -98,7 +98,8 @@ export default function Home() {
       <h1 className="text-white text-center text-5xl font-bold"> Skills </h1>
 
 
-      <div>
+      <div
+      id="skills-section">
       <br/>
       <br/>
 
