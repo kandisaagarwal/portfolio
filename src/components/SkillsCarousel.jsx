@@ -14,8 +14,8 @@ export default function SkillsCarousel({ skillsProp, autoplayInterval = 3000 }) 
   //   { id: "node", name: "Node.js", img: "/skills/node.png" },
   // ];
 
-  const skills = Array.isArray(skillsProp) && skillsProp.length ? skillsProp : skills;
-  const total = skills.length;
+  const myskills = Array.isArray(skillsProp) && skillsProp.length ? skillsProp : skills;
+  const total = myskills.length;
 
   const [visible, setVisible] = useState(3);
   useEffect(() => {
@@ -71,7 +71,7 @@ export default function SkillsCarousel({ skillsProp, autoplayInterval = 3000 }) 
             className="flex transition-transform duration-500 ease-in-out"
             style={{ width: `${wrapperWidthPct}%`, transform: `translateX(-${translatePct}%)` }}
           >
-            {skills.map((s) => (
+            {myskills.map((s) => (
               <div
                 key={s.id}
                 className="flex-shrink-0 p-2 flex flex-col items-center justify-center"
