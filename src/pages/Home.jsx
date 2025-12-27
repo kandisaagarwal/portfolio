@@ -8,7 +8,7 @@ import SwipeCards from "../components/SwipeCards";
 import FloatingButton from "../components/FloatingButton"; // ✅ Import your floating button
 import { projects } from "../data/projects_data"; // ✅ your projects array
 import Background from "../components/Background";
-import SkillsCarousel from "../components/Carousel";
+import SkillsCarousel from "../components/SkillsCarousel";
 
 export default function Home() {
   const containerRef = useRef(null);
