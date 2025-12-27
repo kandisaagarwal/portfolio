@@ -1,19 +1,20 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
+import skills from "../data/skils_data"
 
 export default function SkillsCarousel({ skillsProp, autoplayInterval = 3000 }) {
-  const defaultSkills = [
-    { id: "react", name: "React", img: "/skills/react.png" },
-    { id: "js", name: "JavaScript", img: "/skills/javascript.png" },
-    { id: "ts", name: "TypeScript", img: "/skills/typescript.png" },
-    { id: "py", name: "Python", img: "/skills/python.png" },
-    { id: "node", name: "Node.js", img: "/skills/node.png" },
-    { id: "node", name: "Node.js", img: "/skills/node.png" },
-    { id: "node", name: "Node.js", img: "/skills/node.png" },
-  ];
+  // const defaultSkills = [
+  //   { id: "react", name: "React", img: "/skills/react.png" },
+  //   { id: "js", name: "JavaScript", img: "/skills/javascript.png" },
+  //   { id: "ts", name: "TypeScript", img: "/skills/typescript.png" },
+  //   { id: "py", name: "Python", img: "/skills/python.png" },
+  //   { id: "node", name: "Node.js", img: "/skills/node.png" },
+  //   { id: "node", name: "Node.js", img: "/skills/node.png" },
+  //   { id: "node", name: "Node.js", img: "/skills/node.png" },
+  // ];
 
-  const skills = Array.isArray(skillsProp) && skillsProp.length ? skillsProp : defaultSkills;
+  const skills = Array.isArray(skillsProp) && skillsProp.length ? skillsProp : skills;
   const total = skills.length;
 
   const [visible, setVisible] = useState(3);
