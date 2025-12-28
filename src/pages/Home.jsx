@@ -98,20 +98,19 @@ export default function Home() {
 
       <div
       id="skills-section">
-      <br/>
-      <br/>
-        <h1 className="text-white text-center text-5xl font-bold"> Skills </h1>
 
+
+        <h1 className="text-white text-center text-5xl font-bold"> Skills </h1>
+      <br/>
+      <br/>
 
         <SkillsCarousel/>
 
       </div>
 
-       <br/>
       <br/>
       <br/>
       <br/>
-      
       <br/>
 
       {/* Projects Section */}
@@ -125,8 +124,7 @@ export default function Home() {
 
             <h1 className="text-white text-center text-5xl font-bold"> Projects </h1>
 
-
-
+      <br/>
 
         {projects.map((proj, i) => {
           const start = i / projects.length;
