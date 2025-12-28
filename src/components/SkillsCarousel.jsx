@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 
 export default function SkillsCarousel({ skillsProp, autoplayInterval = 3000 }) {
   const defaultSkills = [
-    { id: "react", name: "React", img: "/skills/react.png" },
+    { id: "react", name: "React", img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" },
     { id: "js", name: "JavaScript", img: "/skills/javascript.png" },
     { id: "ts", name: "TypeScript", img: "/skills/typescript.png" },
     { id: "py", name: "Python", img: "/skills/python.png" },
