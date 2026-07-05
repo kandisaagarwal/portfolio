@@ -1,38 +1,47 @@
-// src/data/projects.js
 export const projects = [
   {
-    title: "Medverse",
+    title: "MockCaller",
+    date: "March 2026 – Present",
     description:
-      "A versatile solution for e-ecommerce suppliers to manage their inventory, handle multiple suppliers, invoicing and ",
-    img: "https://images.unsplash.com/photo-1519682337058-a94d519337bc?q=80&w=2069&auto=format&fit=crop",
+      "Led a 3-person team to build an AI fundraising call simulator for university advancement teams. The platform uses OpenAI Realtime API, Clerk authentication, Prisma ORM, and Supabase PostgreSQL to power realistic donor conversations and live session analytics.",
+    img: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop",
     url: "",
+    tags: ["Next.js", "Prisma", "Supabase", "OpenAI Realtime"],
   },
   {
-    title: "Whats Cookin",
+    title: "Mint",
+    date: "February 2026 – April 2026",
     description:
-      "A story on the border between reality and imaginary, about the contradictory feelings that insularity provokes.",
-    img: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=2069&auto=format&fit=crop",
-    url: "https://www.ignant.com/2022/09/30/clement-chapillon-questions-geographical-and-mental-isolation-with-les-rochers-fauves/",
+      "Built a transformer-based NLP classifier for mental-health text across 7 diagnostic categories, reaching a Macro-F1 of 0.7811. I helped preprocess a 50,000+ token vocabulary, address class imbalance, and contribute interpretability analysis and reporting.",
+    img: "https://images.unsplash.com/photo-1576086213369-97a306d36557?q=80&w=1200&auto=format&fit=crop",
+    url: "",
+    tags: ["Python", "PyTorch", "Transformers", "Research"],
   },
   {
-    title: "SFU Hub",
+    title: "Cross-Modal Prompt Injection Research",
+    date: "April 2026",
     description:
-      "Both crisp and ethereal, encoded with an ambiguity that lets the viewer find their own story within them.",
-    img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=2069&auto=format&fit=crop",
-    url: "https://www.ignant.com/2023/10/28/capturing-balis-many-faces-zissou-documents-the-sacred-and-the-mundane-of-a-fragile-island/",
-  },
-    {
-    title: "KillSwitch",
-    description:
-      "Both crisp and ethereal, encoded with an ambiguity that lets the viewer find their own story within them.",
-    img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=2069&auto=format&fit=crop",
-    url: "https://www.ignant.com/2023/10/28/capturing-balis-many-faces-zissou-documents-the-sacred-and-the-mundane-of-a-fragile-island/",
+      "Co-authored an empirical research paper evaluating prompt injection attacks across text, image, file-upload, and memory-persistence modalities on GPT-4o and Gemini Advanced. The work highlighted memory persistence as the highest-risk vector and informed AI safety recommendations.",
+    img: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop",
+    url: "",
+    tags: ["LLM Safety", "Research", "LaTeX", "AI Security"],
   },
   {
-    title: "Iris Flower Classifier",
+    title: "Agribusiness Analytics Hackathon",
+    date: "May 2026",
     description:
-      "Both crisp and ethereal, encoded with an ambiguity that lets the viewer find their own story within them.",
-    img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=2069&auto=format&fit=crop",
-    url: "https://www.ignant.com/2023/10/28/capturing-balis-many-faces-zissou-documents-the-sacred-and-the-mundane-of-a-fragile-island/",
-  }
+      "Delivered a 3-page Power BI report for precision agriculture ROI analysis across 120 experimental plots in a 24-hour hackathon. I built 50+ DAX metrics and designed a dashboard that translated agronomic and financial inputs into clear stakeholder recommendations.",
+    img: "https://images.unsplash.com/photo-1464226184884-fa280b87c399?q=80&w=1200&auto=format&fit=crop",
+    url: "",
+    tags: ["Power BI", "DAX", "Data Storytelling"],
+  },
+  {
+    title: "Medverse",
+    date: "January 2025",
+    description:
+      "Built at StormHacks 2025, Medverse is a mobile-first AI medical assistant that helps users understand symptoms, medications, and treatment summaries using Gemini API and a React Native interface with real-time streaming responses.",
+    img: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1200&auto=format&fit=crop",
+    url: "",
+    tags: ["React Native", "Gemini API", "Prompt Engineering"],
+  },
 ];
